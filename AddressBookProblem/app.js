@@ -1,45 +1,51 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const AddressBook_1 = require("./Service/AddressBook");
 const CRUDOperations_1 = require("./CRUDOperations");
 const process_1 = require("process");
 var readLineSync = require('readline-sync');
-let person1 = {};
-person1.firstName = "plk";
-person1.lastName = "partani";
-person1.address = "ytl";
-person1.city = "ytl";
-person1.zipcode = "445001";
-person1.phoneNo = "123456789";
-let person = new AddressBook_1.Person(person1);
-console.log(person.firstName);
+/*
+let person1: IPerson = {} as any;
+
+let person = new Person(person1);*/
+let chooseOperation;
 console.log("Enter 1 for adding user");
-console.log("Enter 2 Exit");
+console.log("Enter 2 for updating user");
 console.log("Enter 3 for deleting user");
-console.log("Enter 4 for updating user");
-while (true) {
-    let choice = readLineSync.question("Enter choice");
-    switch (choice) {
-        case "1":
-            CRUDOperations_1.op.addUser();
-            break;
-        case "2":
-            process_1.exit();
-        default:
-            console.log("Invalid");
-            break;
+console.log("Enter 4 for sorting user");
+console.log("Enter 5 Exit");
+class Main {
+    constructor() {
+        this.chooseOperation = () => {
+            while (true) {
+                let choice = readLineSync.question("Enter choice : ");
+                switch (choice) {
+                    case "1":
+                        CRUDOperations_1.op.addUser();
+                        break;
+                    case "2":
+                        CRUDOperations_1.op.updateUserThroughSetter();
+                        /*   let id = readLineSync.question("Enter id : ");
+                           let field = readLineSync.question("Enter Field : ");
+                           let value = readLineSync.question("Enter value : ");
+                           op.updateUser(id, field, value);*/
+                        break;
+                    case "3":
+                        let deleteId = readLineSync.question("Enter frstname : ");
+                        CRUDOperations_1.op.deleteUser(deleteId);
+                        break;
+                    case "4":
+                        let sortField = readLineSync.question("Enter sortfield : ");
+                        CRUDOperations_1.op.sortData(sortField);
+                        break;
+                    case "5":
+                        process_1.exit();
+                    default:
+                        console.log("Invalid");
+                        break;
+                }
+            }
+        };
     }
 }
-//const fs = require("fs");
-/*function addUser(person: Person) {
-    console.log(person);
-    new FileWriter().writeFile(person);
-}
-let userData;
-userData = {
-    firstName: readLineSync.question('Enter fname : '), lastName: readLineSync.question('Enter Lname : '), address: readLineSync.question('Enter address : '),
-    city: readLineSync.question('Enter city : '), state: readLineSync.question('Enter state : '), zipCode: readLineSync.question('Enter zipcode : '),
-    phoneNo: readLineSync.question('Enter phoneno : ')
-}
-addUser(userData);*/
+new Main().chooseOperation();
 //# sourceMappingURL=app.js.map

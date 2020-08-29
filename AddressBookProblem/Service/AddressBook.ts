@@ -49,18 +49,18 @@ export class Person implements IPerson{
     setState(name: string) {
         this.city = name;
     }
-    zipcode: string;
-    getZip(): string {
+    zipcode: number;
+    getZip(): number {
         return this.zipcode;
     }
-     setZip(name: string) {
+     setZip(name: number) {
         this.zipcode = name;
     }
-    phoneNo: string;
-    getPhone(): string {
+    phoneNo: number;
+    getPhone(): number {
         return this.phoneNo;
     }
-    setPhone(name: string) {
+    setPhone(name: number) {
         this.phoneNo = name;
     }
 }

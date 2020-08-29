@@ -4,6 +4,6 @@ export interface IPerson {
     address: string;
     city: string;
     state: string;
-    zipcode: string;
-    phoneNo: string;
+    zipcode: number;
+    phoneNo: number;
 }
