@@ -4,10 +4,7 @@ exports.AddressBookException = void 0;
 class AddressBookException extends Error {
     constructor(message) {
         super(message);
-        this.getExceptionMessage = (message) => {
-            return message;
-        };
-        this.name = "getExceptionMessage";
+        this.name = "ValidationError";
     }
 }
 exports.AddressBookException = AddressBookException;
