@@ -27,6 +27,9 @@ class Main {
                 op.addUser();
                 break;
             case "2":
+                op.updateUserThroughSetter();
+                break;
+            case "3":
                 exit();
             default:
                 console.log("Invalid");
