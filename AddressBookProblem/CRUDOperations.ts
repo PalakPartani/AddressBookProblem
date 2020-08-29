@@ -110,13 +110,31 @@ class CRUDOperations {
         return new FileWriter().updatePersonData(tempArr);
     }
     //sort data by name.
-    sortData = () => {
+    //sorting data.
+    sortData = (sortField: string) => {
         let sortedArray = new Array<IPerson>();
         let data = new FileWriter().returnJsonFile();
-        sortedArray = data.sort((a, b) => (a.firstName > b.firstName) ? 1 : -1);
+        console.log("sort field : " + sortField);
+        switch (sortField) {
+            case "city":
+                sortedArray = data.sort((a, b) => (a.city > b.city) ? 1 : -1);
+                console.log("sorted by city");
+                break;
+            case "state":
+                sortedArray = data.sort((a, b) => (a.state > b.state) ? 1 : -1);
+                console.log("sorted by state");
+                break;
+            case "zipcode":
+                sortedArray = data.sort((a, b) => (a.zipcode > b.zipcode) ? 1 : -1);
+                break;
+            default:
+                sortedArray = data.sort((a, b) => (a.firstName > b.firstName) ? 1 : -1);
+        }
         console.log(sortedArray);
         return new FileWriter().updatePersonData(sortedArray);
     }
+}
+
 
 }
     export let op = new CRUDOperations();

@@ -34,7 +34,8 @@ class Main {
                 op.deleteUser(deleteId);
                 break;
             case "4":
-                op.sortData();
+                let sortField = readLineSync.question("Enter sortfield : ");
+                op.sortData(sortField);
                 break;
             case "5":
                 exit();
