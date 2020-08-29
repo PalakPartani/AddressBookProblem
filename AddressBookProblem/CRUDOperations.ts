@@ -109,5 +109,14 @@ class CRUDOperations {
         }
         return new FileWriter().updatePersonData(tempArr);
     }
+    //sort data by name.
+    sortData = () => {
+        let sortedArray = new Array<IPerson>();
+        let data = new FileWriter().returnJsonFile();
+        sortedArray = data.sort((a, b) => (a.firstName > b.firstName) ? 1 : -1);
+        console.log(sortedArray);
+        return new FileWriter().updatePersonData(sortedArray);
+    }
+
 }
     export let op = new CRUDOperations();

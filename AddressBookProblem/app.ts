@@ -34,6 +34,9 @@ class Main {
                 op.deleteUser(deleteId);
                 break;
             case "4":
+                op.sortData();
+                break;
+            case "5":
                 exit();
             default:
                 console.log("Invalid");
