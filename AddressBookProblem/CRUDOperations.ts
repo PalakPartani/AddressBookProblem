@@ -41,9 +41,9 @@ class CRUDOperations {
                 new FileWriter().writePersonData(list);
             }
         }
-        else {
+       /* else {
             throw new AddressBookException("Invalid input");
-        }
+        }*/
     }
 
     //updateThroughswitch
