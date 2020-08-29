@@ -98,5 +98,16 @@ class CRUDOperations {
 
         return new FileWriter().updatePersonData(data1);
     }
+    //delete using name.
+    deleteUser = (name: string) => {
+        let tempArr = new Array<IPerson>();
+        let data = new FileWriter().returnJsonFile();
+        for (let k = 0; k < data.length; k++) {
+            if (data[k]["firstName"] != name) {
+                tempArr.push(data[k]);
+            }
+        }
+        return new FileWriter().updatePersonData(tempArr);
+    }
 }
     export let op = new CRUDOperations();

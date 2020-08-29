@@ -30,6 +30,10 @@ class Main {
                 op.updateUserThroughSetter();
                 break;
             case "3":
+                let deleteId = readLineSync.question("Enter frstname : ");
+                op.deleteUser(deleteId);
+                break;
+            case "4":
                 exit();
             default:
                 console.log("Invalid");
