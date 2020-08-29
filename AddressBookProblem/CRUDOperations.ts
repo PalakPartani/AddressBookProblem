@@ -31,7 +31,7 @@ class CRUDOperations {
             let chk: boolean = false;
             for (let k = 0; k < data.length; k++) {
                 console.log(data[k]["firstName"]);
-                if (data[k]["firstName"] == p.firstName && data[k]["lastName"] == p.lastName) {
+                if (data[k]["firstName"] == p.firstName && data[k]["lastName"] == p.phoneNo && data[k]["phoneNo"] == p.phoneNo) {
                     chk = true;
                 }
                
@@ -41,9 +41,9 @@ class CRUDOperations {
                 new FileWriter().writePersonData(list);
             }
         }
-       /* else {
+        else {
             throw new AddressBookException("Invalid input");
-        }*/
+        }
     }
 
     //updateThroughswitch
